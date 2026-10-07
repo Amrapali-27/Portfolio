@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--AOS css-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--custom css-->
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!-- ===================== Header / Navigation ===================== -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#" class="nav-link-home">Landing Page</a>
+          <a href="./projects.html" class="nav-link">Projects</a>
+
+          <div class="elsewhere">
+            <button
+              class="elsewhere-toggle"
+              data-dropdown-toggle
+              aria-expanded="false"
+              aria-controls="elsewhereMenu"
+            >
+              Elsewhere
+              <img src="./Assets/Images/chevron-down.svg" alt="" class="chevron" />
+            </button>
+            <ul class="elsewhere-menu" id="elsewhereMenu">
+              <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Behance</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <button
+          class="hamburger"
+          id="hamburgerToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links">
+          <a href="#" class="mobile-nav-link">Landing Page</a>
+          <a href="./projects.html" class="mobile-nav-link">Projects</a>
+          <a href="#" target="_blank" rel="noopener" class="mobile-nav-link">LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener" class="mobile-nav-link">Behance</a>
+          <a href="#" target="_blank" rel="noopener" class="mobile-nav-link">Instagram</a>
+          <a href="#" target="_blank" rel="noopener" class="mobile-nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===================== Hero / Banner ===================== -->
+    <section class="hero">
+      <div class="hero-bg-top">
+        <img src="./Assets/Images/bnr-1.png" alt="" />
+      </div>
+      <div class="hero-bg-bottom">
+        <img src="./Assets/Images/bnr-2.png" alt="" />
+      </div>
+      <img src="./Assets/Images/svg-box.svg" alt="" class="hero-boxes" />
+
+      <div class="container">
+        <h1 class="hero-title">
+          <span class="title-outline">Amrapali</span>
+          <span class="title-fill">Goswami</span>
+        </h1>
+
+        <div class="profile-card">
+          <div class="profile-photo">
+            <img src="./Assets/Images/pp-1.png" alt="Amrapali Goswami" />
+          </div>
+
+          <div class="profile-info">
+            <div class="info-text">
+              <div class="location">
+                <span class="location-label">Location:</span>
+                <span class="location-value">Kolkata, India</span>
+              </div>
+
+              <ul class="roles">
+                <li>
+                  <span>Web Designer</span>
+                  <img src="./Assets/Images/dot-rectangle.svg" alt="" />
+                </li>
+                <li class="roles-plus">
+                  <span>+</span>
+                </li>
+                <li>
+                  <span>Frontend Developer</span>
+                  <img src="./Assets/Images/dot-rectangle.svg" alt="" />
+                </li>
+              </ul>
+            </div>
+
+            <button class="btn-resume" type="button">
+              <img src="./Assets/Images/svg1.svg" alt="" />
+              Download Resume
+            </button>
+          </div>
+
+          <img src="./Assets/Images/dot-rectangle.svg" alt="" class="card-dot" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="about">
+      <div class="container">
+        <div class="about-text">
+          <p>
+            I am a UI/UX Designer with hands-on experience designing intuitive web and mobile
+            products through research-led thinking and structured problem solving. I work across
+            the end-to-end design process — from understanding user behavior and defining
+            information architecture to crafting refined interfaces and validating solutions
+            through testing.
+          </p>
+          <p>
+            With a foundation in front-end development implementation, I design with feasibility
+            in mind and collaborate closely with engineering teams to ensure clarity and
+            consistency in execution of DEV ready product designs. My background in teaching and
+            HR has strengthened my ability to listen deeply, facilitate discussions, and translate
+            complex requirements into thoughtful, user-centered solutions that also align with
+            business goals.
+          </p>
+        </div>
+
+        <h2 class="about-watermark">Amrapali Goswami</h2>
+      </div>
+    </section>
+
+    <!-- ===================== How I Work ===================== -->
+    <section class="how-i-work" id="how-i-work">
+      <img src="./Assets/Images/svg-box.svg" alt="" class="work-boxes" />
+
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-watermark">How I Work</h2>
+          <span class="section-badge">My Superpowers</span>
+        </div>
+
+        <div class="work-grid">
+          <ul class="skills">
+            <li class="skill">
+              <div class="skill-icon skill-icon--pad">
+                <img src="Assets/Images/figma.png" alt="Figma" />
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-name">Figma</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="--percent: 90%"></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="skill">
+              <div class="skill-icon">
+                <img src="Assets/Images/adobe-photoshop.png" alt="Adobe Photoshop" />
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-name">Adobe Photoshop</span>
+                  <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="--percent: 70%"></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="skill">
+              <div class="skill-icon">
+                <img src="Assets/Images/adobe-illustrator.png" alt="Adobe Illustrator" />
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-name">Adobe Illustrator</span>
+                  <span class="skill-percent">60%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="--percent: 60%"></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="skill">
+              <div class="skill-icon skill-icon--pad">
+                <img src="Assets/Images/html.png" alt="HTML/CSS/JS" />
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-name">HTML/CSS/JS</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="--percent: 90%"></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="skill">
+              <div class="skill-icon">
+                <img src="Assets/Images/bootstrap.png" alt="Bootstrap" />
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-name">Bootstrap</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="--percent: 90%"></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="skill">
+              <div class="skill-icon">
+                <img src="Assets/Images/tailwind.png" alt="Tailwind" />
+              </div>
+              <div class="skill-bar">
+                <div class="skill-bar-head">
+                  <span class="skill-name">Tailwind</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="--percent: 80%"></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="work-details">
+            <p class="work-intro">
+              These skills reflect the tools and technologies I rely on to transform structured
+              thinking into practical execution. Beyond proficiency, I focus on precision,
+              usability and consistency - ensuring every design decision is intentional and
+              scalable.
+            </p>
+
+            <div class="approach">
+              <h3 class="subsection-label">Design Approach</h3>
+              <ol class="approach-steps">
+                <li class="approach-step">
+                  <div class="approach-step-top">
+                    <span class="step-num">01</span>
+                    <span class="step-name">Research</span>
+                  </div>
+                  <span class="step-line"></span>
+                </li>
+                <li class="approach-step">
+                  <div class="approach-step-top">
+                    <span class="step-num">02</span>
+                    <span class="step-name">Structure</span>
+                  </div>
+                  <span class="step-line"></span>
+                </li>
+                <li class="approach-step">
+                  <div class="approach-step-top">
+                    <span class="step-num">03</span>
+                    <span class="step-name">Validate</span>
+                  </div>
+                  <span class="step-line"></span>
+                </li>
+              </ol>
+            </div>
+
+            <div class="priorities">
+              <h3 class="subsection-label">What I Prioritize</h3>
+              <ul class="priority-list">
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8.5L6.2 11.5L13 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  User-first decision making
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8.5L6.2 11.5L13 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Clean &amp; scalable systems
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8.5L6.2 11.5L13 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  DEV-ready execution
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-watermark">Projects</h2>
+          <span class="section-badge">My Work</span>
+        </div>
+
+        <ul class="project-list">
+          <li class="project-card">
+            <h3 class="project-title">[ Aura ]</h3>
+
+            <div class="project-body">
+              <p class="project-desc">
+                <em>Aura</em> is a fashion-focused website designed to showcase curated
+                collections in a clean and engaging way. I designed the entire experience in
+                Figma and brought it to life through front-end development, ensuring the visual
+                storytelling, layout, and interactions feel seamless and intuitive. This project
+                reflects my ability to take an idea from concept to a fully functional,
+                responsive product.
+              </p>
+
+              <div class="project-meta">
+                <span class="project-year">2025</span>
+                <ul class="project-tags">
+                  <li>UI/UX Design</li>
+                  <li>Front-end Development</li>
+                  <li>Responsive Web</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-byline">Amrapali Goswami <span class="byline-sep">x</span> Portfolio</span>
+              <a href="#" class="project-link">
+                View Full Project
+                <span class="link-arrow" aria-hidden="true">&#8599;</span>
+              </a>
+            </div>
+
+            <div class="project-gallery">
+              <div class="gallery-item">
+                <img src="./Assets/Images/project1.png" alt="Aura editorial and lookbook layout" loading="lazy" />
+              </div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/project2.png" alt="Aura campaign and Euphoria collection spread" loading="lazy" />
+              </div>
+              <div class="gallery-item gallery-item--wide">
+                <img src="./Assets/Images/project3.png" alt="Aura brand story and newsletter section" loading="lazy" />
+              </div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/project4.png" alt="Aura all looks collection showcase" loading="lazy" />
+              </div>
+              <div class="gallery-item">
+                <img src="./Assets/Images/project5.png" alt="Aura gallery carousel" loading="lazy" />
+              </div>
+              <div class="gallery-item gallery-item--wide">
+                <img src="./Assets/Images/project6.png" alt="Aura moodboard with color palette and typography" loading="lazy" />
+              </div>
+              <div class="gallery-item gallery-item--wide">
+                <img src="./Assets/Images/project7.png" alt="Aura front-end code and mobile navigation preview" loading="lazy" />
+              </div>
+            </div>
+          </li>
+
+          <li class="project-card">
+            <h3 class="project-title">[ SkySwift ]</h3>
+
+            <div class="project-body">
+              <p class="project-desc">
+                <em>SkySwift</em> is a drone services and product platform designed to help
+                users explore, compare, and purchase professional drone solutions. I designed the
+                complete web experience in Figma — from the landing page and product catalog to
+                checkout and account flows — focusing on clarity, usability, and structured
+                information. Alongside the website, I also designed a companion
+                <strong>mobile app</strong> to create a connected digital experience for users
+                across devices.
+              </p>
+
+              <div class="project-meta">
+                <span class="project-year">2025</span>
+                <ul class="project-tags">
+                  <li>Product Design</li>
+                  <li>Web Platform</li>
+                  <li>Mobile App Design</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <span class="project-byline">Amrapali Goswami <span class="byline-sep">x</span> Portfolio</span>
+              <a href="#" class="project-link">
+                View Full Project
+                <span class="link-arrow" aria-hidden="true">&#8599;</span>
+              </a>
+            </div>
+
+            <div class="project-gallery project-gallery--rows">
+              <div class="gallery-row">
+                <div class="gallery-item" style="--ratio: 0.749">
+                  <img src="./Assets/Images/Group 1012.png" alt="SkySwift login screen and drone services section" loading="lazy" />
+                </div>
+                <div class="gallery-item" style="--ratio: 0.665">
+                  <img src="./Assets/Images/Group 1013.png" alt="SkySwift approach video, featured shots and drone show banner" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="gallery-row">
+                <div class="gallery-item">
+                  <img src="./Assets/Images/Group 1014.png" alt="SkySwift product catalog with filters and credibility section" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="gallery-row">
+                <div class="gallery-item" style="--ratio: 1.193">
+                  <img src="./Assets/Images/Screenshot 2026-03-05 071138 1.png" alt="SkySwift client reviews on a world map" loading="lazy" />
+                </div>
+                <div class="gallery-item" style="--ratio: 1.796">
+                  <img src="./Assets/Images/Screenshot 2026-03-10 105409 1.png" alt="SkySwift DJI Avata product detail page" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="gallery-row">
+                <div class="gallery-item">
+                  <img src="./Assets/Images/Screenshot 2026-03-10 114055 1.png" alt="SkySwift tagline banner" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div class="app-showcase">
+              <div class="app-showcase-head">
+                <h4 class="subsection-label">Companion Mobile App</h4>
+                <span class="app-showcase-hint" aria-hidden="true">Swipe &rarr;</span>
+              </div>
+
+              <ol class="app-flow">
+                <li class="app-stage">
+                  <span class="app-stage-label"><span>01</span> Onboarding</span>
+                  <div class="app-stage-screens">
+                    <img src="./Assets/Images/screen1.png" alt="SkySwift splash screen – Soar Smarter, Fly Faster" loading="lazy" />
+                    <img src="./Assets/Images/screen2.png" alt="SkySwift onboarding screen – Seamless skies, effortless service" loading="lazy" />
+                  </div>
+                </li>
+
+                <li class="app-stage">
+                  <span class="app-stage-label"><span>02</span> Sign Up</span>
+                  <div class="app-stage-screens">
+                    <img src="./Assets/Images/screen3.png" alt="SkySwift welcome screen with create account and Google sign-in" loading="lazy" />
+                    <img src="./Assets/Images/screen5.png" alt="SkySwift registration form" loading="lazy" />
+                  </div>
+                </li>
+
+                <li class="app-stage">
+                  <span class="app-stage-label"><span>03</span> Explore</span>
+                  <div class="app-stage-screens">
+                    <img src="./Assets/Images/screen4.png" alt="SkySwift home screen with offers and services" loading="lazy" />
+                    <img src="./Assets/Images/screen8.png" alt="SkySwift drone catalog with category filters" loading="lazy" />
+                  </div>
+                </li>
+
+                <li class="app-stage">
+                  <span class="app-stage-label"><span>04</span> Book &amp; Pay</span>
+                  <div class="app-stage-screens">
+                    <img src="./Assets/Images/screen6.png" alt="SkySwift DJI Avata detail and booking screen" loading="lazy" />
+                    <img src="./Assets/Images/screen9.png" alt="SkySwift payment method selection" loading="lazy" />
+                  </div>
+                </li>
+
+                <li class="app-stage">
+                  <span class="app-stage-label"><span>05</span> Manage</span>
+                  <div class="app-stage-screens">
+                    <img src="./Assets/Images/screen7.png" alt="SkySwift bookings with upcoming and past orders" loading="lazy" />
+                    <img src="./Assets/Images/screen10.png" alt="SkySwift user profile and settings" loading="lazy" />
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-connect">
+          <span class="footer-watermark" aria-hidden="true">Connect</span>
+          <a href="mailto:amrapaligoswami33@gmail.com" class="btn-mail">Mail Me</a>
+        </div>
+
+        <h2 class="footer-title">[ Let&rsquo;s Work Together ]</h2>
+
+        <div class="footer-contact">
+          <span class="footer-contact-label">Just send me a message:</span>
+          <a href="mailto:amrapaligoswami33@gmail.com" class="footer-email">amrapaligoswami33@gmail.com</a>
+        </div>
+
+        <div class="footer-signoff">
+          <span class="footer-claps">(<em>Claps</em>)</span>
+          <p class="footer-thanks">
+            <span>Thanks</span>
+            <span class="footer-thanks-muted">For View</span>
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#" class="footer-link">Landing Page</a>
+          <a href="./projects.html" class="footer-link">Projects</a>
+
+          <div class="footer-dropdown">
+            <button
+              class="footer-link footer-dropdown-toggle"
+              data-dropdown-toggle
+              aria-expanded="false"
+              aria-controls="footerElsewhereMenu"
+            >
+              Elsewhere
+              <img src="./Assets/Images/chevron-down.svg" alt="" class="chevron" />
+            </button>
+            <ul class="footer-menu" id="footerElsewhereMenu">
+              <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Behance</a></li>
+              <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+
+    <!--AOS js-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- GSAP js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
