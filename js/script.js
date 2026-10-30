@@ -92,6 +92,21 @@ if (skillFills.length) {
   skillFills.forEach((fill) => skillObserver.observe(fill));
 }
 
+// ===================== Work & Case Studies =====================
+// Flip cards rely on :hover, which doesn't exist on touch devices,
+// so tapping toggles the flip instead (one open at a time).
+const flipCards = document.querySelectorAll(".flip-card");
+
+if (flipCards.length && window.matchMedia("(hover: none)").matches) {
+  flipCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const wasFlipped = card.classList.contains("is-flipped");
+      flipCards.forEach((c) => c.classList.remove("is-flipped"));
+      card.classList.toggle("is-flipped", !wasFlipped);
+    });
+  });
+}
+
 // ===================== Projects =====================
 // App showcase columns drift at opposite speeds while scrolling (desktop only).
 const appShowcase = document.querySelector(".app-showcase");

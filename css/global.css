@@ -87,22 +87,28 @@ ul {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  opacity: 0.85;
   transition: opacity 0.2s ease;
 }
 
 .nav-link {
   grid-column: 2;
   justify-self: center;
-  opacity: 0.85;
-}
-
-.nav-link:hover {
-  opacity: 1;
 }
 
 .nav-link-home {
   grid-column: 1;
   justify-self: start;
+}
+
+.nav-link:hover,
+.nav-link-home:hover {
+  opacity: 1;
+}
+
+.nav-link.is-active,
+.nav-link-home.is-active {
+  opacity: 1;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--text-light);
 }
@@ -400,6 +406,12 @@ ul {
 .footer-link:hover,
 .footer-dropdown-toggle[aria-expanded="true"] {
   opacity: 1;
+}
+
+.footer-link.is-active {
+  opacity: 1;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--text-light);
 }
 
 .footer-nav > :first-child {
