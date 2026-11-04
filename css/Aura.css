@@ -1,0 +1,704 @@
+/* ===================== Aura Case Study (Aura.html only) ===================== */
+
+.case-study-hero {
+  position: relative;
+  padding-block: 56px 0;
+  overflow: hidden;
+}
+
+/* The source PNG already bakes its own low alpha into the pattern,
+   so it's placed at full CSS opacity and left to carry its own subtlety. */
+.case-study-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../Assets/Images/aura-bg.png") top center no-repeat;
+  background-size: 100% auto;
+  pointer-events: none;
+}
+
+.case-study-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.case-study-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #d7ffa1;
+  color: var(--text-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-title {
+  margin-top: 28px;
+  color: var(--text-light);
+  font-size: clamp(40px, 6.6vw, 80px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.case-study-desc {
+  max-width: 520px;
+  margin-top: 24px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.case-study-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.case-study-link-label {
+  color: #d7ffa1;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-link {
+  color: #3292ff;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.case-study-link:hover {
+  background-size: 100% 1px;
+}
+
+/* ----- Laptop mockup -----
+   The source PNG has a large built-in blank margin above the laptop itself,
+   so the wrapper is pulled up to close the visual gap left by that. */
+.case-study-mockup {
+  margin-top: -124px;
+  padding-inline: 24px;
+}
+
+.case-study-mockup img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* ===================== About the Project ===================== */
+.about-project {
+  padding-block: 96px;
+}
+
+.about-project-head {
+  position: relative;
+}
+
+.about-project-boxes {
+  position: absolute;
+  top: -12px;
+  right: 0;
+  width: 72px;
+  height: auto;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.about-project-title {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: var(--text-light);
+  font-size: clamp(30px, 4.4vw, 54px);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  word-spacing: -0.3em;
+  text-transform: uppercase;
+}
+
+.about-project-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleY(-1);
+  color: inherit;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-project-copy {
+  max-width: 860px;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+/* ----- Cards ----- */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.about-card {
+  border-radius: 16px;
+}
+
+.about-card-inner {
+  position: relative;
+  min-height: 310px;
+  border-radius: inherit;
+}
+
+.about-card-front,
+.about-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.about-card-front {
+  opacity: 1;
+  transition: opacity 1.1s ease;
+}
+
+.about-card-back {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-card:hover .about-card-front,
+.about-card:focus-visible .about-card-front,
+.about-card.is-flipped .about-card-front {
+  opacity: 0;
+}
+
+.about-card:hover .about-card-back,
+.about-card:focus-visible .about-card-back,
+.about-card.is-flipped .about-card-back {
+  clip-path: inset(0 0 0 0);
+}
+
+.about-card-front {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 100%), var(--primary-color);
+  box-shadow: inset 0 0 0 1px rgba(245, 244, 240, 0.06);
+}
+
+.about-card-head {
+  padding: 22px 20px 16px;
+  border-bottom: 1px solid rgba(245, 244, 240, 0.25);
+  text-align: center;
+}
+
+.about-card-head h3 {
+  color: #d7ffa1;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-card-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: 24px 28px;
+}
+
+.about-card-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-light);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.about-card-list li img {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.about-card-back img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================== The Problem ===================== */
+.the-problem {
+  padding-block: 96px;
+}
+
+.the-problem-title {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: var(--text-light);
+  font-size: clamp(30px, 4.4vw, 54px);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  word-spacing: -0.3em;
+  text-transform: uppercase;
+}
+
+.the-problem-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleY(-1);
+  color: inherit;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.the-problem-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+  margin-top: 96px;
+}
+
+.the-problem-copy {
+  flex: 0 0 auto;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+.the-problem-image {
+  flex: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(245, 244, 240, 0.08);
+}
+
+.the-problem-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===================== My Role ===================== */
+.my-role {
+  position: relative;
+  padding-block: 96px;
+  overflow: hidden;
+}
+
+.my-role-boxes {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  width: 140px;
+  height: auto;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.my-role-title {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: var(--text-light);
+  font-size: clamp(30px, 4.4vw, 54px);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  word-spacing: -0.3em;
+  text-transform: uppercase;
+}
+
+.my-role-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleY(-1);
+  color: inherit;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.my-role-content {
+  position: relative;
+  display: flex;
+  gap: 64px;
+  margin-top: 56px;
+}
+
+.my-role-copy {
+  flex: 0 0 auto;
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 28px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+.role-accordion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-accordion-item {
+  border-bottom: 1px solid rgba(245, 244, 240, 0.25);
+}
+
+.role-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding-block: 28px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  text-align: left;
+  cursor: pointer;
+}
+
+.role-accordion-title {
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.role-accordion-arrow {
+  flex: 0 0 auto;
+  color: var(--text-light);
+  transform: rotate(180deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.role-accordion-item.is-open .role-accordion-arrow {
+  transform: rotate(0deg);
+}
+
+.role-accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.role-accordion-item.is-open .role-accordion-panel {
+  max-height: 200px;
+  padding-bottom: 28px;
+}
+
+/* ===================== Design Process ===================== */
+.design-process {
+  padding-block: 96px;
+}
+
+.process-title {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: var(--text-light);
+  font-size: clamp(30px, 4.4vw, 54px);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  word-spacing: -0.3em;
+  text-transform: uppercase;
+}
+
+.process-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleY(-1);
+  color: inherit;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.process-intro {
+  max-width: 900px;
+  margin-top: 96px;
+  color: var(--text-light);
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.process-subhead {
+  margin-top: 56px;
+  color: #d7ffa1;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.process-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.process-gallery-row {
+  display: grid;
+  gap: 16px;
+}
+
+.process-gallery-row--top {
+  grid-template-columns: 518fr 610fr;
+}
+
+.process-gallery-row--bottom {
+  grid-template-columns: 454fr 219fr 449fr;
+}
+
+.process-gallery-item {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(245, 244, 240, 0.08);
+}
+
+.process-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.process-keywords {
+  margin-top: 56px;
+  color: var(--text-light);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.process-keywords em {
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ===================== Responsive ===================== */
+/* Breakpoint scale: 1400 / 1200 / 1024 / 992 / 768 / 576 / 320. */
+@media (max-width: 768px) {
+  .case-study-hero {
+    padding-block: 40px 0;
+  }
+
+  .case-study-title {
+    margin-top: 20px;
+  }
+
+  .case-study-desc {
+    margin-top: 18px;
+  }
+
+  .case-study-mockup {
+    margin-top: -110px;
+  }
+
+  .about-project {
+    padding-block: 64px;
+  }
+
+  .about-project-title {
+    letter-spacing: 0.3em;
+    word-spacing: -0.2em;
+  }
+
+  .about-project-copy {
+    margin-top: 40px;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .about-card-inner {
+    min-height: 300px;
+  }
+
+  .the-problem {
+    padding-block: 64px;
+  }
+
+  .the-problem-title {
+    letter-spacing: 0.3em;
+    word-spacing: -0.2em;
+  }
+
+  .the-problem-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .the-problem-copy {
+    width: 100%;
+  }
+
+  .my-role {
+    padding-block: 64px;
+  }
+
+  .my-role-title {
+    letter-spacing: 0.3em;
+    word-spacing: -0.2em;
+  }
+
+  .my-role-boxes {
+    width: 96px;
+    top: 12px;
+    right: 24px;
+  }
+
+  .my-role-content {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .my-role-copy {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .role-accordion-trigger {
+    padding-block: 22px;
+  }
+
+  .design-process {
+    padding-block: 64px;
+  }
+
+  .process-title {
+    letter-spacing: 0.3em;
+    word-spacing: -0.2em;
+  }
+
+  .process-intro {
+    margin-top: 56px;
+  }
+
+  .process-gallery-row--top,
+  .process-gallery-row--bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .case-study-badge {
+    padding: 6px 14px;
+    font-size: 11px;
+  }
+
+  .case-study-link-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .case-study-link {
+    font-size: 13px;
+  }
+
+  .case-study-mockup {
+    margin-top: -46px;
+  }
+
+  .about-project-title {
+    font-size: clamp(22px, 7.5vw, 30px);
+    letter-spacing: 0.18em;
+    word-spacing: -0.12em;
+  }
+
+  .about-project-boxes {
+    width: 48px;
+  }
+
+  .the-problem-title {
+    font-size: clamp(22px, 7.5vw, 30px);
+    letter-spacing: 0.18em;
+    word-spacing: -0.12em;
+  }
+
+  .my-role-title {
+    font-size: clamp(22px, 7.5vw, 30px);
+    letter-spacing: 0.18em;
+    word-spacing: -0.12em;
+  }
+
+  .my-role-boxes {
+    width: 64px;
+    top: 8px;
+    right: 16px;
+  }
+
+  .process-title {
+    font-size: clamp(22px, 7.5vw, 30px);
+    letter-spacing: 0.18em;
+    word-spacing: -0.12em;
+  }
+}

@@ -92,20 +92,41 @@ if (skillFills.length) {
   skillFills.forEach((fill) => skillObserver.observe(fill));
 }
 
-// ===================== Work & Case Studies =====================
+// ===================== Work & Case Studies / About the Project =====================
 // Flip cards rely on :hover, which doesn't exist on touch devices,
-// so tapping toggles the flip instead (one open at a time).
-const flipCards = document.querySelectorAll(".flip-card");
+// so tapping toggles the flip instead (one open at a time per group).
+const flipCards = document.querySelectorAll(".flip-card, .about-card");
 
 if (flipCards.length && window.matchMedia("(hover: none)").matches) {
   flipCards.forEach((card) => {
     card.addEventListener("click", () => {
+      const group = card.closest(".flip-grid, .about-cards") || card.parentElement;
       const wasFlipped = card.classList.contains("is-flipped");
-      flipCards.forEach((c) => c.classList.remove("is-flipped"));
+      group.querySelectorAll(".flip-card, .about-card").forEach((c) => c.classList.remove("is-flipped"));
       card.classList.toggle("is-flipped", !wasFlipped);
     });
   });
 }
+
+// ===================== My Role =====================
+// One item open at a time; clicking the open item's trigger closes it.
+const roleAccordionItems = document.querySelectorAll(".role-accordion-item");
+
+roleAccordionItems.forEach((item) => {
+  const trigger = item.querySelector(".role-accordion-trigger");
+
+  trigger.addEventListener("click", () => {
+    const wasOpen = item.classList.contains("is-open");
+
+    roleAccordionItems.forEach((other) => {
+      other.classList.remove("is-open");
+      other.querySelector(".role-accordion-trigger").setAttribute("aria-expanded", "false");
+    });
+
+    item.classList.toggle("is-open", !wasOpen);
+    trigger.setAttribute("aria-expanded", String(!wasOpen));
+  });
+});
 
 // ===================== Projects =====================
 // App showcase columns drift at opposite speeds while scrolling (desktop only).
