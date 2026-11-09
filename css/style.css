@@ -1,4 +1,4 @@
-/* ===================== Hero ===================== */
+/* hero */
 .hero {
   position: relative;
   overflow: hidden;
@@ -81,7 +81,7 @@
   padding: 10px 24px 16px;
 }
 
-/* ===================== Profile card ===================== */
+/* profile card */
 .profile-card {
   position: relative;
   z-index: 1;
@@ -220,7 +220,7 @@
   z-index: 2;
 }
 
-/* ===================== About ===================== */
+/* about */
 .about {
   position: relative;
   padding-block: 0px 32px;
@@ -249,7 +249,7 @@
   white-space: nowrap;
 }
 
-/* ===================== How I Work ===================== */
+/* how i work */
 .how-i-work {
   position: relative;
   padding-block: 40px 120px;
@@ -504,7 +504,7 @@
   color: var(--text-light);
 }
 
-/* ===================== Projects ===================== */
+/* projects */
 .projects {
   padding-block: 40px 120px;
 }
@@ -606,9 +606,7 @@
   transform: scale(1.05);
 }
 
-/* Row-based variant for screenshots that don't split evenly in half.
-   Each item grows by its image's width/height ratio, so every image in
-   a row ends up the same height. */
+/* same height images in a row */
 .project-gallery--rows {
   display: flex;
   flex-direction: column;
@@ -624,14 +622,14 @@
   min-width: 0;
 }
 
-/* ----- Mobile app showcase ----- */
+/* app showcase */
 .app-showcase {
   margin-top: 16px;
   padding: 48px 40px 64px;
   border-radius: 12px;
   background:
     radial-gradient(60% 50% at 50% 0%, rgba(247, 148, 29, 0.18), transparent 70%),
-    #171615;
+    var(--primary-color);
   box-shadow: inset 0 0 0 1px rgba(245, 244, 240, 0.08);
   overflow: hidden;
 }
@@ -663,7 +661,7 @@
   list-style: none;
 }
 
-/* Every other column sits lower, giving the staggered layout. */
+/* every other column sits lower */
 .app-stage:nth-child(even) {
   margin-top: 96px;
 }
@@ -748,12 +746,10 @@
   font-size: 13px;
 }
 
-/* ===================== Responsive ===================== */
+/* responsive */
 
 
-/* The hero-bg pixel offsets above are tuned to the ~1440px desktop frame in
-   Figma; below that they no longer land in the right spot, so this reverts
-   to a responsive, self-centering version for every smaller tier. */
+/* hero bg offsets only work at 1440 */
 @media (max-width: 1400px) {
   .hero-bg-top,
   .hero-bg-bottom {
@@ -784,7 +780,7 @@
     flex-basis: clamp(180px, 22vw, 260px);
   }
 
-  /* App showcase turns into a swipeable row, one flow stage per slide. */
+  /* swipe on mobile */
   .app-showcase {
     padding: 40px 0 48px;
   }

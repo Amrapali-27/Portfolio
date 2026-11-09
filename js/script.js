@@ -1,7 +1,6 @@
-// ===================== Header / Navigation =====================
+// header
 
-// ----- Dropdowns (header Elsewhere + footer menus) -----
-// Each toggle points at its menu through aria-controls; only one stays open at a time.
+// dropdowns
 const dropdownToggles = document.querySelectorAll("[data-dropdown-toggle]");
 
 function getDropdownMenu(toggle) {
@@ -40,7 +39,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// ----- Hamburger nav (mobile) -----
+// hamburger
 const hamburgerToggle = document.getElementById("hamburgerToggle");
 const mobileNav = document.getElementById("mobileNav");
 
@@ -72,9 +71,9 @@ if (hamburgerToggle && mobileNav) {
   });
 }
 
-// ===================== How I Work =====================
-// Skill bars fill from 0 to their target width the first time they scroll into view.
-const skillFills = document.querySelectorAll(".skill-fill");
+// how i work
+// skill bars and aura palette animate on scroll
+const skillFills = document.querySelectorAll(".skill-fill, .palette-swatches");
 
 if (skillFills.length) {
   const skillObserver = new IntersectionObserver(
@@ -92,9 +91,29 @@ if (skillFills.length) {
   skillFills.forEach((fill) => skillObserver.observe(fill));
 }
 
-// ===================== Work & Case Studies / About the Project =====================
-// Flip cards rely on :hover, which doesn't exist on touch devices,
-// so tapping toggles the flip instead (one open at a time per group).
+// from design to code
+const processVideo = document.querySelector("[data-video]");
+
+if (processVideo) {
+  const video = processVideo.querySelector("video");
+
+  processVideo.querySelector("button").addEventListener("click", () => {
+    video.play().catch(() => {});
+  });
+
+  video.addEventListener("play", () => {
+    video.controls = true;
+    processVideo.classList.add("is-playing");
+  });
+
+  video.addEventListener("ended", () => {
+    video.controls = false;
+    processVideo.classList.remove("is-playing");
+  });
+}
+
+// flip cards
+// no hover on touch so tap to flip
 const flipCards = document.querySelectorAll(".flip-card, .about-card");
 
 if (flipCards.length && window.matchMedia("(hover: none)").matches) {
@@ -108,8 +127,7 @@ if (flipCards.length && window.matchMedia("(hover: none)").matches) {
   });
 }
 
-// ===================== My Role =====================
-// One item open at a time; clicking the open item's trigger closes it.
+// my role
 const roleAccordionItems = document.querySelectorAll(".role-accordion-item");
 
 roleAccordionItems.forEach((item) => {
@@ -128,8 +146,8 @@ roleAccordionItems.forEach((item) => {
   });
 });
 
-// ===================== Projects =====================
-// App showcase columns drift at opposite speeds while scrolling (desktop only).
+// projects
+// columns move at different speeds, desktop only
 const appShowcase = document.querySelector(".app-showcase");
 
 if (appShowcase && window.gsap && window.ScrollTrigger) {

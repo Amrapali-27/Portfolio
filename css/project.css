@@ -1,4 +1,4 @@
-/* ===================== Work & Case Studies (project.html only) ===================== */
+/* projects page */
 
 .case-studies {
   padding-block: 64px 120px;
@@ -21,7 +21,7 @@
   letter-spacing: 0.02em;
 }
 
-/* ----- Flip card grid ----- */
+/* cards */
 .flip-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,6 +45,7 @@
 
 .flip-card:hover .flip-card-inner,
 .flip-card:focus-visible .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
 .flip-card.is-flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -83,6 +84,7 @@
   flex: 0 0 auto;
   padding: 16px 20px;
   background: #f4ffe3;
+  text-align: center;
 }
 
 .flip-card-title-bar h3 {
@@ -122,7 +124,7 @@
   color: rgba(26, 25, 24, 0.75);
 }
 
-/* Aura's back pattern is a dark charcoal, so it needs light text instead of dark. */
+/* aura card is dark so light text */
 .flip-card--light .flip-card-body {
   color: var(--text-light);
 }
@@ -131,7 +133,49 @@
   color: var(--text-muted);
 }
 
-/* ===================== Responsive ===================== */
+.flip-card-btn {
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: var(--text-light);
+  color: var(--text-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flip-card-btn:hover {
+  background: #d7ffa1;
+  transform: translateY(-2px);
+}
+
+.flip-card-btn:focus-visible {
+  outline: 2px solid var(--text-light);
+  outline-offset: 3px;
+}
+
+/* responsive */
+/* button was overflowing on small cards */
+@media (min-width: 993px) and (max-width: 1120px), (max-width: 440px) {
+  .flip-card--light .flip-card-body {
+    gap: 10px;
+    padding: 12px 18px;
+  }
+
+  .flip-card--light .flip-card-label {
+    margin-bottom: 4px;
+  }
+
+  .flip-card--light .flip-card-section p {
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}
+
 @media (max-width: 992px) {
   .case-studies {
     padding-block: 48px 96px;
