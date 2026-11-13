@@ -91,6 +91,33 @@ if (skillFills.length) {
   skillFills.forEach((fill) => skillObserver.observe(fill));
 }
 
+// generic scroll reveal
+// .reveal-group elements cascade to their direct .reveal children (staggered via CSS);
+// standalone .reveal elements (not inside a group) animate on their own
+const revealTargets = Array.from(document.querySelectorAll(".reveal, .reveal-group")).filter(
+  (el) => !(el.classList.contains("reveal") && el.closest(".reveal-group"))
+);
+
+if (revealTargets.length) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    revealTargets.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealTargets.forEach((el) => revealObserver.observe(el));
+  }
+}
+
 // from design to code
 const processVideo = document.querySelector("[data-video]");
 

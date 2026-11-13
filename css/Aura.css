@@ -1,4 +1,4 @@
-/* aura page */
+/* ===================== Aura Case Study (Aura.html only) ===================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Slab:wght@800&display=swap');
 
 .case-study-hero {
@@ -128,13 +128,14 @@
 .about-project-title::after {
   content: attr(data-text);
   position: absolute;
-  top: 100%;
+  top: 0.72em;
   left: 0;
   transform: scaleY(-1);
   color: inherit;
-  opacity: 0.35;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  opacity: 0.22;
+  filter: blur(1px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
+  mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
   pointer-events: none;
   user-select: none;
 }
@@ -151,7 +152,7 @@
   letter-spacing: 0.03em;
 }
 
-/* cards */
+/* ----- Cards ----- */
 .about-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -272,13 +273,14 @@
 .the-problem-title::after {
   content: attr(data-text);
   position: absolute;
-  top: 100%;
+  top: 0.72em;
   left: 0;
   transform: scaleY(-1);
   color: inherit;
-  opacity: 0.35;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  opacity: 0.22;
+  filter: blur(1px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
+  mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
   pointer-events: none;
   user-select: none;
 }
@@ -347,13 +349,14 @@
 .my-role-title::after {
   content: attr(data-text);
   position: absolute;
-  top: 100%;
+  top: 0.72em;
   left: 0;
   transform: scaleY(-1);
   color: inherit;
-  opacity: 0.35;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  opacity: 0.22;
+  filter: blur(1px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
+  mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
   pointer-events: none;
   user-select: none;
 }
@@ -457,13 +460,14 @@
 .design-code-title::after {
   content: attr(data-text);
   position: absolute;
-  top: 100%;
+  top: 0.72em;
   left: 0;
   transform: scaleY(-1);
   color: inherit;
-  opacity: 0.35;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 70%);
+  opacity: 0.22;
+  filter: blur(1px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
+  mask-image: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.6));
   pointer-events: none;
   user-select: none;
 }
@@ -822,7 +826,7 @@
   transform: translate(-50%, 0);
 }
 
-/* no hover on phones so always show the codes */
+/* No hover on touch screens, so the codes stay visible, turned to fit narrow bars. */
 @media (hover: none) {
   .palette-swatch span {
     bottom: 16px;
@@ -960,7 +964,7 @@
   margin-top: 96px;
   color: var(--text-muted);
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 0.8;
   letter-spacing: 0.03em;
 }
 
