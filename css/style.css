@@ -185,6 +185,11 @@
 }
 
 .btn-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
   align-self: flex-start;
   margin-top: 32px;
   gap: 10px;
